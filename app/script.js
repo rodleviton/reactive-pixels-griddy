@@ -19,7 +19,7 @@ const addLighting = (ctx, x, y, radius) => {
   ctx.arc(x, y, radius, 0, 2 * Math.PI);
   ctx.fill();
   ctx.restore();
-}
+};
 
 /** Create an array to represnt grid */
 const makeGrid = (canvasWidth, canvasHeight, cellWidth, cellHeight) => {
@@ -34,7 +34,7 @@ const makeGrid = (canvasWidth, canvasHeight, cellWidth, cellHeight) => {
     '#39419C',
     '#292F70',
     '#242A62'
-]
+  ];
 
   let grid = [];
 
