@@ -1,7 +1,6 @@
-import './base.css';
 import './style.css';
 
-const cellSize = 45;
+const cellSize = 10;
 const canvasWidth = 340;
 const canvasHeight = 460;
 
@@ -47,7 +46,7 @@ const makeGrid = (canvasWidth, canvasHeight, cellWidth, cellHeight) => {
         yPos: (i * cellHeight),
         width: cellWidth,
         height: cellHeight,
-        speed: Math.random() * 0.008,
+        speed: Math.random() * 0.02,
         opacity: Math.random(),
         fadeDirection: fadeDirection[Math.floor(Math.random() * fadeDirection.length)],
         background: colours[Math.floor(Math.random() * colours.length)]        
@@ -76,7 +75,7 @@ const render = (canvas, grid) => {
         
         ctx.fillStyle = cell.background;
                 
-        if (cell.fadeDirection === 'in') {
+        if (cell.fadeDirection === 'in')  {
           if ((cell.opacity + cell.speed) <= 1) {
             ctx.globalAlpha = cell.opacity + cell.speed;
             cell.opacity = cell.opacity + cell.speed; 
