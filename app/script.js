@@ -4,22 +4,6 @@ const cellSize = 10;
 const canvasWidth = 340;
 const canvasHeight = 460;
 
-const addLighting = (ctx, x, y, radius) => {
-  ctx.save();
-
-  ctx.globalCompositeOperation = "lighter";
-  const radialGradient = ctx.createRadialGradient(x, y, 0, x, y, radius);
-
-  radialGradient.addColorStop(0.0, "#2A3178");
-  radialGradient.addColorStop(1, "#000000");
-
-  ctx.fillStyle = radialGradient;
-  ctx.beginPath();
-  ctx.arc(x, y, radius, 0, 2 * Math.PI);
-  ctx.fill();
-  ctx.restore();
-};
-
 /** Create an array to represnt grid */
 const makeGrid = (canvasWidth, canvasHeight, cellWidth, cellHeight) => {
   const cellsX = Math.ceil(canvasWidth / cellWidth); // cells per row
@@ -58,6 +42,22 @@ const makeGrid = (canvasWidth, canvasHeight, cellWidth, cellHeight) => {
   }
 
   return grid;
+};
+
+const addLighting = (ctx, x, y, radius) => {
+  ctx.save();
+
+  ctx.globalCompositeOperation = "lighter";
+  const radialGradient = ctx.createRadialGradient(x, y, 0, x, y, radius);
+
+  radialGradient.addColorStop(0.0, "#2A3178");
+  radialGradient.addColorStop(1, "#000000");
+
+  ctx.fillStyle = radialGradient;
+  ctx.beginPath();
+  ctx.arc(x, y, radius, 0, 2 * Math.PI);
+  ctx.fill();
+  ctx.restore();
 };
 
 const render = (canvas, grid) => {
