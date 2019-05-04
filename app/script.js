@@ -1,6 +1,6 @@
 import "./style.css";
 
-const cellSize = 10;
+const cellSize = 12;
 const canvasWidth = 340;
 const canvasHeight = 340;
 
