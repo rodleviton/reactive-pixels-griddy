@@ -2,7 +2,7 @@ import "./style.css";
 
 const cellSize = 10;
 const canvasWidth = 340;
-const canvasHeight = 460;
+const canvasHeight = 340;
 
 /** Create an array to represnt grid */
 const makeGrid = (canvasWidth, canvasHeight, cellWidth, cellHeight) => {
