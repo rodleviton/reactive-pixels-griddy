@@ -24,7 +24,37 @@ ul {
   font-weight: normal;
 }
 
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #pixels {
   width: 340px;
   height: 340px;
+  border-radius: 12px;
+}
+
+.pixels-wrapper {
+  width: 340px;
+  height: 340px;
+  position: relative;
+}
+
+.pixels-wrapper:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 220px;
+  height: 50px;
+  box-shadow: 0 10px 60px rgba(0, 0, 0, 0.5);
 }
